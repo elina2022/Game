@@ -156,10 +156,70 @@ h4 {
     scale: 0.98;
 }
 
-#character, #character1, #characterEyes {
+#character1, #character2, #character3, #character4, #character5, #character6, #characterEyes {
     position: absolute;
     margin: 9px;
     width: 100px;
+}
+#character1{
+    animation: blinking1 4s infinite;
+}
+#character2{
+    animation: blinking2 4s infinite;
+}
+#character3{
+    animation: blinking3 4s infinite;
+}
+#character4{
+    animation: blinking4 4s infinite;
+}
+#character5{
+    animation: blinking5 4s infinite;
+}
+#character6{
+    animation: blinking6 4s infinite;
+}
+@keyframes blinking3{
+    0% {z-index: 1;}
+    10% {z-index: 1;}
+    20%{z-index: -1;}
+    30% {z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes blinking5{
+    0% {z-index: 1;}
+    20% {z-index: 1;}
+    30%{z-index: -1;}
+    40% {z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes blinking1{
+    0% {z-index: 1;}
+    30% {z-index: 1;}
+    40%{z-index: -1;}
+    50% {z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes blinking4{
+    0% {z-index: 1;}
+    40% {z-index: 1;}
+    50%{z-index: -1;}
+    60% {z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes blinking2{
+    0% {z-index: 1;}
+    50% {z-index: 1;}
+    60%{z-index: -1;}
+    70% {z-index: 1;}
+    100%{z-index: 1;}
+}
+@keyframes blinking6{
+    0% {z-index: 1;}
+    60% {z-index: 1;}
+    70%{z-index: -1;}
+    80% {z-index: 1;}
+    100%{z-index: 1;}
 }
 
 .buyToppings {
