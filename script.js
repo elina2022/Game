@@ -21,28 +21,10 @@ var okTopping = $("#okTopping")
 var popupHired = $("#popupHired")
 var okHired = $("#okHired")
 var popupCoins = $("#popupCoins")
-var okCoins = $("#okCoins")
-var character1 = $("#character1")
 clickCounter = [0, 0, 0, 0, 0, 0]
 clickCounter2 = [0, 0, 0]
 clickCounter3 = [0, 0, 0]
 
-function blinking() {
-    character1.style.display = "none"
-    console.log("blinking")
-}
-blinking();
-setInterval(blinking, 1000);
-setTimeout(blinking, 500);
-
-function blinkingOpen() {
-    character1.style.display = "inline"
-    console.log("blinkingOpen")
-}
-blinkingOpen();
-setInterval(blinkingOpen, 1000);
-
-// setTimeout(blinkingOpen, 100)
 pizza.onclick = function () { clickPlusMinus(1) }
 sellingButton.onclick = function () { sellPizza() }
 
