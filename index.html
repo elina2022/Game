@@ -12,15 +12,34 @@
     <title>Pizza Clicker</title>
 </head>
 
-<body><div id="all" >
+<body>
+    <!-- <div id="all" > -->
     <ul class="buyToppings">
         <h4>Buy toppings</h4>
-        <li><img src="assets/cheese-bg.svg" alt="cheese topping" class="buyToppingsItem" onclick="buyToppingsButton(0, 100, 50) "style="border: 3px solid rgb(234, 169, 6);" ><small style="border: 2px solid rgb(234, 169, 6);" >100 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li><img src="assets/peperoni-bg.svg" alt="peperoni topping" class="buyToppingsItem" onclick="buyToppingsButton(1, 200, 100) "style="border: 3px solid rgb(235, 22, 47);" ><small style="border: 2px solid rgb(235, 22, 47);">200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li><img src="assets/bellpeper-bg.svg" alt="bellpeper topping" class="buyToppingsItem" onclick="buyToppingsButton(2, 300, 150) "style="border: 3px solid rgb(43, 83, 0);" ><small style="border: 2px solid rgb(43, 83, 0);">300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li><img src="assets/mushrooms-bg.svg" alt="mushroom topping" class="buyToppingsItem" onclick="buyToppingsButton(3, 400, 200) "style="border: 3px solid rgb(122, 75, 0);" ><small style="border: 2px solid rgb(122, 75, 0);">400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li><img src="assets/olive-bg.svg" alt="olive topping" class="buyToppingsItem" onclick="buyToppingsButton(4, 500, 250) "style="border: 3px solid rgb(23, 23, 23);" ><small style="border: 2px solid rgb(23, 23, 23);">500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li><img src="assets/onions-bg.svg" alt="onion topping" class="buyToppingsItem" onclick="buyToppingsButton(5, 600, 300) "style="border: 3px solid rgb(221, 132, 221);" ><small style="border: 2px solid rgb(234, 106, 234);">600 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(0, 1, 50)">
+            <small>100 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/cheese-bg.svg" alt="cheese topping" class="buyToppingsItem" style="border: 3px solid rgb(234, 169, 6);">
+        </li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(1, 2, 100)">
+            <small>200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/peperoni-bg.svg" alt="peperoni topping" class="buyToppingsItem" style="border: 3px solid rgb(235, 22, 47);">
+        </li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(2, 3, 150)">
+            <small>300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/bellpeper-bg.svg" alt="bellpeper topping" class="buyToppingsItem" style="border: 3px solid rgb(43, 83, 0);">
+        </li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(3, 4, 200)">
+            <small>400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/mushrooms-bg.svg" alt="mushroom topping" class="buyToppingsItem" style="border: 3px solid rgb(122, 75, 0);">
+        </li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(4, 5, 250)">
+            <small>500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/olive-bg.svg" alt="olive topping" class="buyToppingsItem" style="border: 3px solid rgb(23, 23, 23);">
+        </li>
+        <li class="buyToppingsList" onclick="buyToppingsButton(5, 6, 300)">
+            <small>600 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+            <img src="assets/onions-bg.svg" alt="onion topping" class="buyToppingsItem" style="border: 3px solid rgb(221, 132, 221);">
+        </li>
     </ul>
     <main>
         <h1>Pizzeria <span id="name"></span><br>You have <span id="score">0</span><img src="assets/coin-shadow.svg" alt="coin" id="coin" ></h1>
@@ -39,14 +58,50 @@
     </main>
     <ul class="hireWorkers">
         <h4 id="h4-hireWorkers">Hire employees</h4>
-        <li style="border: 3px solid rgb(234, 169, 6); background-color: rgb(255, 201, 65);" class="workers" onclick="pointsPerClick(0, 200, 1, 0)"><h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5><img src="assets/character-3-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-3.svg" alt="character" id="character1"><small class="small-2">200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li style="border: 3px solid rgb(235, 22, 47); background-color: rgb(255, 116, 132);" class="workers" onclick="pointPerSec(0, 300, 1, 1);perSecond(1)"><h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5><img src="assets/character-5-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-5.svg" alt="character" id="character2"><small class="small-2">300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li style="border: 3px solid rgb(43, 83, 0); background-color: rgb(143, 191, 93);" class="workers" onclick="pointsPerClick(1, 400, 2, 2)"><h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5><img src="assets/character-6-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-6.svg" alt="character" id="character3"><small class="small-2">400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li style="border: 3px solid rgb(122, 75, 0); background-color: rgb(200, 165, 108);" class="workers" onclick="pointPerSec(1, 500, 2, 3);perSecond(2)"><h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5><img src="assets/character-1-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-1.svg" alt="character" id="character4"><small class="small-2">500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li style="border: 3px solid rgb(23, 23, 23); background-color: rgb(166, 166, 166);" class="workers" onclick="pointsPerClick(2, 800, 5, 4)"><h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5><img src="assets/character-4-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-4.svg" alt="character" id="character5"><small class="small-2">800 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
-        <li style="border: 3px solid rgb(234, 106, 234); background-color: rgb(255, 180, 255);" class="workers" onclick="pointPerSec(2, 900, 5, 5);perSecond(5)"><h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5><img src="assets/character-2-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-2.svg" alt="character" id="character6"><small class="small-2">900 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(234, 169, 6); background-color: rgb(255, 201, 65);" class="workers" onclick="pointsPerClick(0, 2, 1, 0)">
+            <h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5>
+            <img src="assets/character-3-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-3.svg" alt="character" id="character1">
+            <img src="assets/character-3-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
+        <li style="border: 3px solid rgb(235, 22, 47); background-color: rgb(255, 116, 132);" class="workers" onclick="pointPerSec(0, 3, 1, 1);perSecond(1)">
+            <h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5>
+            <img src="assets/character-5-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-5.svg" alt="character" id="character2">
+            <img src="assets/character-5-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
+        <li style="border: 3px solid rgb(43, 83, 0); background-color: rgb(143, 191, 93);" class="workers" onclick="pointsPerClick(1, 4, 2, 2)">
+            <h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5>
+            <img src="assets/character-6-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-6.svg" alt="character" id="character3">
+            <img src="assets/character-6-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
+        <li style="border: 3px solid rgb(122, 75, 0); background-color: rgb(200, 165, 108);" class="workers" onclick="pointPerSec(1, 5, 2, 3);perSecond(2)">
+            <h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5>
+            <img src="assets/character-1-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-1.svg" alt="character" id="character4">
+            <img src="assets/character-1-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
+        <li style="border: 3px solid rgb(23, 23, 23); background-color: rgb(166, 166, 166);" class="workers" onclick="pointsPerClick(2, 8, 5, 4)">
+            <h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5>
+            <img src="assets/character-4-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-4.svg" alt="character" id="character5">
+            <img src="assets/character-4-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">800 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
+        <li style="border: 3px solid rgb(234, 106, 234); background-color: rgb(255, 180, 255);" class="workers" onclick="pointPerSec(2, 9, 5, 5);perSecond(5)">
+            <h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5>
+            <img src="assets/character-2-eyes.svg" alt="character" id="characterEyes">
+            <img src="assets/character-2.svg" alt="character" id="character6">
+            <img src="assets/character-2-smile.svg" alt="character" id="characterSmile">
+            <small class="small-2">900 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small>
+        </li>
     </ul>
-</div>
+<!-- </div> -->
 <div id="popupTopping" >You already bought this topping <button id="okTopping" onclick="popupGone(popupTopping)">OK</button> </div>
 <div id="popupHired"> You already hired this employee <button id="okHired" onclick="popupGone(popupHired)">OK</button> </div>
 <div id="popupCoins">You don't have enough coins to complete this action <button id="okCoins" onclick="popupGone(popupCoins)">OK</button> </div>
