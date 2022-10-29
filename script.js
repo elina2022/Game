@@ -28,7 +28,7 @@ clickCounter3 = [0, 0, 0]
 pizza.onclick = function () { clickPlusMinus(1) }
 sellingButton.onclick = function () { sellPizza() }
 
-// var namePrompt = prompt("Welcome to your pizzeria, what is your name?")
+var namePrompt = prompt("Welcome to your pizzeria, what is your name?")
 nameID.innerText = "of " + namePrompt
 
 function popupGone(popup) {
