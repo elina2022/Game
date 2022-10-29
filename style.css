@@ -10,7 +10,6 @@
 
 body {
     background-color: var(--color-bg);
-    overflow: hidden;
     font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -20,12 +19,10 @@ ul {
 }
 
 main {
-    left: 0;
-    right: 0;
-    margin: auto;
-    margin-top: 20px;
-    width: 800px;
-    height: 100vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 95vh;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -116,12 +113,13 @@ h4 {
 }
 
 #wood {
-    position: relative;
+    /* position: absolute; */
     margin-left: 1%;
     border-radius: 30px;
     width: 650px;
     aspect-ratio: 1/1;
     box-shadow: var(--shadow-big);
+
 }
 
 #all {
@@ -132,11 +130,13 @@ h4 {
 .hireWorkers {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    height: 95vh;
     justify-content: space-evenly;
     position: relative;
-    margin: 20px;
-    right: -200px;
+    float: right; 
+    margin-right: 10vw;
+    width: 10vw;
+    top: -97.5vh;
 }
 
 .workers {
@@ -156,11 +156,65 @@ h4 {
     scale: 0.98;
 }
 
-#character1, #character2, #character3, #character4, #character5, #character6, #characterEyes {
+#characterSmile{
+    z-index: 5;
+    opacity: 0;
+    transition: 100ms;
+}
+
+.workers:hover > #characterSmile{
+    opacity: 1;
+}
+
+.buyToppings {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    justify-content: space-evenly;
+    position: relative;
+    margin-left: 70px;
+    width: 20vw;
+}
+
+.buyToppingsItem {
+    width: 20vw;
+    height: 12vh;
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+    object-fit: cover;
+    animation: toppingsMove 15s infinite linear;
+}
+
+@keyframes toppingsMove{
+    0% {object-position: 50% 50%;}
+    50% {object-position: 100% 100%;}
+    100% { object-position: 50% 50%;}
+}
+
+.buyToppingsList {
+    width: 20vw;
+    height: 12vh;
+    position: relative;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.buyToppingsList:hover {
+    box-shadow: none;
+    scale: 0.98;
+}
+
+#characterSmile, #character1, #character2, #character3, #character4, #character5, #character6, #characterEyes {
     position: absolute;
     margin: 9px;
     width: 100px;
 }
+
+#characterEyes{
+    z-index: 2;
+}
+
 #character1{
     animation: blinking1 4s infinite;
 }
@@ -180,78 +234,46 @@ h4 {
     animation: blinking6 4s infinite;
 }
 @keyframes blinking3{
-    0% {z-index: 1;}
-    10% {z-index: 1;}
-    20%{z-index: -1;}
-    30% {z-index: 1;}
-    100%{z-index: 1;}
+    0% {z-index: 3;}
+    10% {z-index: 3;}
+    20%{z-index: 1;}
+    30% {z-index: 3;}
+    100%{z-index: 3;}
 }
 @keyframes blinking5{
-    0% {z-index: 1;}
-    20% {z-index: 1;}
-    30%{z-index: -1;}
-    40% {z-index: 1;}
-    100%{z-index: 1;}
+    0% {z-index: 3;}
+    20% {z-index: 3;}
+    30%{z-index: 1;}
+    40% {z-index: 3;}
+    100%{z-index: 3;}
 }
 @keyframes blinking1{
-    0% {z-index: 1;}
-    30% {z-index: 1;}
-    40%{z-index: -1;}
-    50% {z-index: 1;}
-    100%{z-index: 1;}
+    0% {z-index: 3;}
+    30% {z-index: 3;}
+    40%{z-index: 1;}
+    50% {z-index: 3;}
+    100%{z-index: 3;}
 }
 @keyframes blinking4{
-    0% {z-index: 1;}
-    40% {z-index: 1;}
-    50%{z-index: -1;}
-    60% {z-index: 1;}
-    100%{z-index: 1;}
+    0% {z-index: 3;}
+    40% {z-index: 3;}
+    50%{z-index: 1;}
+    60% {z-index: 3;}
+    100%{z-index: 3;}
 }
 @keyframes blinking2{
-    0% {z-index: 1;}
-    50% {z-index: 1;}
-    60%{z-index: -1;}
-    70% {z-index: 1;}
-    100%{z-index: 1;}
+    0% {z-index: 3;}
+    50% {z-index: 3;}
+    60%{z-index: 1;}
+    70% {z-index: 3;}
+    100%{z-index: 3;}
 }
 @keyframes blinking6{
-    0% {z-index: 1;}
-    60% {z-index: 1;}
-    70%{z-index: -1;}
-    80% {z-index: 1;}
-    100%{z-index: 1;}
-}
-
-.buyToppings {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-evenly;
-    position: relative;
-    margin: 20px;
-    margin-left: 70px;
-}
-
-.buyToppingsItem {
-    width: 20vw;
-    height: 12vh;
-    position: relative;
-    overflow: hidden;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: var(--shadow-medium);
-    transition: 300ms;
-}
-
-.buyToppingsItem:hover {
-    box-shadow: none;
-    scale: 0.98;
-}
-
-.buyToppingsItem:hover + small{
-    box-shadow: none;
-    scale: 0.95;
+    0% {z-index: 3;}
+    60% {z-index: 3;}
+    70%{z-index: 1;}
+    80% {z-index: 3;}
+    100%{z-index: 3;}
 }
 
 #cheese,
@@ -348,7 +370,7 @@ h4 {
 small {
     position: absolute;
     right: 15px;
-    margin-top: 70px;
+    margin-top: 67px;
     border-radius: 5px;
     letter-spacing: 2px;
     font-size: 25px;
@@ -360,7 +382,7 @@ small {
 }
 
 .small-2 {
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 #coin-small {
