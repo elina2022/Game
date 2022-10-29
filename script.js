@@ -8,9 +8,8 @@ var sellingCount = $("#sellFor")
 var selingButton = $("#sellingButton")
 var toppings = $all(".toppingsItem")
 var toppingsAll = $(".toppings")
-var buyToppings = $all(".buyToppingsItem")
+var buyToppings = $all(".buyToppingsList")
 var toppings = $all(".toppingsItem")
-var buyToppings = $all(".buyToppingsItem")
 var workers = $all(".workers")
 var nameID = $("#name")
 var pointAdd = 1
@@ -28,7 +27,8 @@ clickCounter3 = [0, 0, 0]
 pizza.onclick = function () { clickPlusMinus(1) }
 sellingButton.onclick = function () { sellPizza() }
 
-var namePrompt = prompt("Welcome to your pizzeria, what is your name?")
+var namePrompt = prompt("What is your name?")
+var welcomeAlert = alert("Welcome to your pizzeria " + namePrompt + ", click on the pizza to collect coins!")
 nameID.innerText = "of " + namePrompt
 
 function popupGone(popup) {
@@ -67,13 +67,11 @@ function buyToppingsButton(numberTopping, pointsToBuy, pointsForTopping) {
             selling = selling + pointsForTopping
             sellingCount.innerText = selling
         } else {
-            // alert("You dont have enough coins")
             popupCoins.style.display = "inline"
             okCoins.style.display = "inline"
             clickCounter[numberTopping] = 0
         }
     } else if (clickCounter[numberTopping] >= 2) {
-        // alert("You can not buy the same topping twice")
         popupTopping.style.display = "inline"
         okTopping.style.display = "inline"
     }
@@ -88,13 +86,11 @@ function pointsPerClick(numberTopping, pointsToBuy, workersPointAdd, workerNumbe
             clicks = clicks - pointsToBuy
             score.innerText = clicks
         } else {
-            // alert("You dont have enough coins")
             popupCoins.style.display = "inline"
             okCoins.style.display = "inline"
             clickCounter2[numberTopping] = 0
         }
     } else if (clickCounter2[numberTopping] >= 2) {
-        // alert("You can not hire the same employee twice")
         popupHired.style.display = "inline"
         okHired.style.display = "inline"
     }
@@ -110,7 +106,6 @@ function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumbe
             score.innerText = clicks
 
         } else {
-            // alert("You dont have enough coins")
             popupCoins.style.display = "inline"
             okCoins.style.display = "inline"
             clickCounter3[numberTopping] = 0
@@ -118,7 +113,6 @@ function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumbe
     } else if (clickCounter3[numberTopping] >= 2) {
         popupHired.style.display = "inline"
         okHired.style.display = "inline"
-        // alert("You can not hire the same employee twice")
     }
 }
 
@@ -127,6 +121,3 @@ function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumbe
 //     second = second + secondNew
 //     coinsPerSecondHTML.innerText = second
 // }
-
-
-
