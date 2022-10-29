@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Pizza Clicker</title>
+</head>
+
+<body><div id="all" >
+    <ul class="buyToppings">
+        <h4>Buy toppings</h4>
+        <li><img src="assets/cheese-bg.svg" alt="cheese topping" class="buyToppingsItem" onclick="buyToppingsButton(0, 1, 50) "style="border: 3px solid rgb(234, 169, 6);" ><small style="border: 2px solid rgb(234, 169, 6);" >100 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li><img src="assets/peperoni-bg.svg" alt="peperoni topping" class="buyToppingsItem" onclick="buyToppingsButton(1, 2, 100) "style="border: 3px solid rgb(235, 22, 47);" ><small style="border: 2px solid rgb(235, 22, 47);">200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li><img src="assets/bellpeper-bg.svg" alt="bellpeper topping" class="buyToppingsItem" onclick="buyToppingsButton(2, 3, 150) "style="border: 3px solid rgb(43, 83, 0);" ><small style="border: 2px solid rgb(43, 83, 0);">300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li><img src="assets/mushrooms-bg.svg" alt="mushroom topping" class="buyToppingsItem" onclick="buyToppingsButton(3, 4, 200) "style="border: 3px solid rgb(122, 75, 0);" ><small style="border: 2px solid rgb(122, 75, 0);">400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li><img src="assets/olive-bg.svg" alt="olive topping" class="buyToppingsItem" onclick="buyToppingsButton(4, 5, 250) "style="border: 3px solid rgb(23, 23, 23);" ><small style="border: 2px solid rgb(23, 23, 23);">500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li><img src="assets/onions-bg.svg" alt="onion topping" class="buyToppingsItem" onclick="buyToppingsButton(5, 6, 300) "style="border: 3px solid rgb(221, 132, 221);" ><small style="border: 2px solid rgb(234, 106, 234);">600 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+    </ul>
+    <main>
+        <h1>Pizzeria <span id="name"></span><br>You have <span id="score">0</span><img src="assets/coin-shadow.svg" alt="coin" id="coin" ></h1>
+        <h2>Coins per click <span id="coinsPerClickHTML">1</span> | Coins per second <span id="coinsPerSecondHTML">0</span></h2>
+        <img src="assets/wood.svg" alt="wood" id="wood">
+        <ul class="toppings">
+            <img src="assets/empty-pizza-small.svg" alt="pizza" id="pizza">
+            <li><img src="assets/cheese.svg" alt="" id="cheese" class="toppingsItem"></li>
+            <li><img src="assets/peperoni.svg" alt="" id="peperoni" class="toppingsItem"></li>
+            <li><img src="assets/bellpeper.svg" alt="" id="bellpeper" class="toppingsItem"></li>
+            <li><img src="assets/mushrooms.svg" alt="" id="mushrooms" class="toppingsItem"></li>
+            <li><img src="assets/olives.svg" alt="" id="olives" class="toppingsItem"></li>
+            <li><img src="assets/onion.svg" alt="" id="onion" class="toppingsItem"></li>
+        </ul>
+        <h3 id="sellingButton">Sell pizza for <span id="sellFor">0</span><img src="assets/coin-shadow.svg" alt="coin" id="coin-2"></h3>
+    </main>
+    <ul class="hireWorkers">
+        <h4 id="h4-hireWorkers">Hire employees</h4>
+        <li style="border: 3px solid rgb(234, 169, 6); background-color: rgb(255, 201, 65);" class="workers" onclick="pointsPerClick(0, 2, 1, 0)"><h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5><img src="assets/character-3-eyes.svg" alt="character" id="characterEyes"><img src="assets/character-3.svg" alt="character" id="character1"><small class="small-2">200 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(235, 22, 47); background-color: rgb(255, 116, 132);" class="workers" onclick="pointPerSec(0, 3, 1, 1);perSecond(1)"><h5>+1 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5> <img src="assets/character-5.svg" alt="character" id="character"><small class="small-2">300 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(43, 83, 0); background-color: rgb(143, 191, 93);" class="workers" onclick="pointsPerClick(1, 4, 2, 2)"><h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5> <img src="assets/character-6.svg" alt="character" id="character"><small class="small-2">400 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(122, 75, 0); background-color: rgb(200, 165, 108);" class="workers" onclick="pointPerSec(1, 5, 2, 3);perSecond(2)"><h5>+2 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5> <img src="assets/character-1.svg" alt="character" id="character"><small class="small-2">500 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(23, 23, 23); background-color: rgb(166, 166, 166);" class="workers" onclick="pointsPerClick(2, 8, 5, 4)"><h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per click</h5> <img src="assets/character-4.svg" alt="character" id="character"><small class="small-2">800 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+        <li style="border: 3px solid rgb(234, 106, 234); background-color: rgb(255, 180, 255);" class="workers" onclick="pointPerSec(2, 9, 5, 5);perSecond(5)"><h5>+5 <img src="assets/coin.svg" alt="coin" id="coin-h5" > per second</h5> <img src="assets/character-2.svg" alt="character" id="character"><small class="small-2">900 <img src="assets/coin-shadow.svg" alt="coin" id="coin-small"></small></li>
+    </ul>
+</div>
+<div id="popupTopping" >You already bought this topping <button id="okTopping" onclick="popupGone(popupTopping)">OK</button> </div>
+<div id="popupHired"> You already hired this employee <button id="okHired" onclick="popupGone(popupHired)">OK</button> </div>
+<div id="popupCoins">You don't have enough coins to complete this action <button id="okCoins" onclick="popupGone(popupCoins)">OK</button> </div>
+<script src="script.js"></script>
+</body>
+</html>
