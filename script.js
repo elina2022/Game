@@ -27,8 +27,8 @@ clickCounter3 = [0, 0, 0]
 pizza.onclick = function () { clickPlusMinus(1) }
 sellingButton.onclick = function () { sellPizza() }
 
-var namePrompt = prompt("What is your name?")
-var welcomeAlert = alert("Welcome to your pizzeria " + namePrompt + ", click on the pizza to collect coins!")
+// var namePrompt = prompt("What is your name?")
+// var welcomeAlert = alert("Welcome to your pizzeria " + namePrompt + ", click on the pizza to collect coins!")
 nameID.innerText = "of " + namePrompt
 
 function popupGone(popup) {
@@ -85,6 +85,12 @@ function pointsPerClick(numberTopping, pointsToBuy, workersPointAdd, workerNumbe
             workers[workerNumber].style.opacity = "0.5"
             clicks = clicks - pointsToBuy
             score.innerText = clicks
+            // var perClick = 1
+            // perClick = perClick + workersPointAdd
+            // coinsPerClickHTML.innerText = perClick
+
+            // coinsPerClickHTML = Number(coinsPerClickHTML)
+            // coinsPerClickHTML.innerText = coinsPerClickHTML + workersPointAdd
         } else {
             popupCoins.style.display = "inline"
             okCoins.style.display = "inline"
@@ -115,9 +121,3 @@ function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumbe
         okHired.style.display = "inline"
     }
 }
-
-// function perSecond(secondNew){
-//     var second = 0
-//     second = second + secondNew
-//     coinsPerSecondHTML.innerText = second
-// }
