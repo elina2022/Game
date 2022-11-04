@@ -77,7 +77,7 @@ function buyToppingsButton(numberTopping, pointsToBuy, pointsForTopping) {
     }
 }
 
-// let perClick = 1
+let perClick = 1
 function pointsPerClick(numberTopping, pointsToBuy, workersPointAdd, workerNumber) {
     clickCounter2[numberTopping] = clickCounter2[numberTopping] + 1
     if (clickCounter2[numberTopping] == 1) {
@@ -87,8 +87,8 @@ function pointsPerClick(numberTopping, pointsToBuy, workersPointAdd, workerNumbe
             clicks = clicks - pointsToBuy
             score.innerText = clicks
 
-            // perClick = perClick + workersPointAdd
-            // coinsPerClickHTML.innerText = perClick
+            perClick = perClick + workersPointAdd
+            coinsPerClickHTML.innerText = perClick
 
             // coinsPerClickHTML = Number(coinsPerClickHTML)
             // coinsPerClickHTML.innerText = coinsPerClickHTML + workersPointAdd
@@ -103,6 +103,7 @@ function pointsPerClick(numberTopping, pointsToBuy, workersPointAdd, workerNumbe
     }
 }
 
+let perSec = 0
 function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumber) {
     clickCounter3[numberTopping] = clickCounter3[numberTopping] + 1
     if (clickCounter3[numberTopping] == 1) {
@@ -111,6 +112,9 @@ function pointPerSec(numberTopping, pointsToBuy, pointsPerSecPoints, workerNumbe
             workers[workerNumber].style.opacity = "0.5"
             clicks = clicks - pointsToBuy
             score.innerText = clicks
+
+            perSec = perSec + pointsPerSecPoints
+            coinsPerSecondHTML.innerText = perSec
 
         } else {
             popupCoins.style.display = "inline"
