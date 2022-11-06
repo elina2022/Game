@@ -180,7 +180,6 @@ h4 {
     width: 20vw;
     height: 12vh;
     border-radius: 10px;
-    box-shadow: var(--shadow-medium);
     object-fit: cover;
     animation: toppingsMove 15s infinite linear;
 }
@@ -198,6 +197,8 @@ h4 {
     object-fit: cover;
     cursor: pointer;
     transition: 300ms;
+    box-shadow: var(--shadow-medium);
+    border-radius: 10px;
 }
 
 .buyToppingsList:hover {
